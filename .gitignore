@@ -30,3 +30,5 @@
 *.exe
 *.out
 *.app
+
+lab01/build/*
