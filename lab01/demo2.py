@@ -6,7 +6,8 @@ sdr = RtlSdr()
 # configure device
 sdr.sample_rate = 2.4e6
 sdr.center_freq = 95e6
-sdr.center_freq = 88.5e6
+sdr.center_freq = 94.7e6
+#sdr.center_freq = 88.5e6
 sdr.gain = 4
 
 print(sdr)
