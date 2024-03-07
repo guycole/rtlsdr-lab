@@ -10,20 +10,58 @@ void decode(const std::string& buffer) {
     std::cout << buffer << std::endl;
 
     // buffer looks like "*f6d8c9833540611d6ebdee841425;"
-    // remove the * and ;
-    std::size_t ndx1 = buffer.find("*");
-    std::size_t ndx2 = buffer.find(";");
-    std::string candidate = buffer.substr(ndx1 + 1, ndx2 - ndx1 - 1);
+    // test for "*"" and ";" 
+    std::size_t asterisk = buffer.find("*");
+    if (asterisk == std::string::npos) {
+        std::cout << "not found x" << std::endl;
+        // error
+    }
 
+    std::size_t semicolon = buffer.find(";");
+    if (semicolon == std::string::npos) {
+        std::cout << "not found ;" << std::endl;
+        // error
+    }
+
+    // remove the * and ;
+    std::string temp_string = buffer.substr(asterisk + 1, semicolon - asterisk - 1);
+
+    int limit = temp_string.length();
+    char* char_array = new char[limit + 1];
+
+    strcpy(char_array, temp_string.c_str()); 
+    for (int ii = 0; ii < limit; ii++) { 
+        std::cout << char_array[ii]; 
+    } 
+
+    std::cout << std::endl;
+
+/*
     // convert hex string to binary
     std::fill(std::begin(bitbuffer), std::end(bitbuffer), 0);
 
+   
+    int ndx1 = limit-1;
+    std::size_t ndx2 = 0;
+
+    while (ndx1 >= 0) {
+        std::cout << temp_string[ndx1] << std::endl;
+        ndx2 = ndx1;
+        std::string buffer2 = temp_string.substr(ndx1, 1);
+
+        int num = std::stoi(buffer2, 0, 16);
+        std::cout << "converted:" << num << std::endl;
+        ndx1--;
+    }
+*/
+/*
     std::cout << candidate << std::endl;
     std::cout << candidate.length() << std::endl;
 
     for (std::size_t ii = 0; ii < candidate.length(); ii++) {
         std::cout << candidate[ii] << std::endl;
     }
+    */
 
 // 89a30f8d58b982abf57364e2ea61
 // 1000 1 001 
@@ -50,7 +88,7 @@ void decode(const std::string& buffer) {
 }
 
 int main(int argc, char* argv[]) {
-    std::string buffer;
+    std::string buffer = "*8da2;";
 
     while (std::getline(std::cin, buffer)) {
         if (buffer.empty()) {
