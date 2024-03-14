@@ -3,6 +3,8 @@
 
 #include "mode_s_decoder.h"
 
+//g++ -o sd -g -Wall *.cxx
+ 
 int main(int argc, char* argv[]) {
     std::cout << "begin" << endl;
 
