@@ -5,6 +5,7 @@ using namespace std;
 class mode_s_decoder {
 public:
     void converter(std::string raw_buffer);
+    void adsb_parser(std::string raw_buffer);
 
     int get_ca() { return xponder_capability; }
     int get_df() { return downlink_format; }
@@ -27,4 +28,5 @@ private:
     // converted array is for converted message
     //int converted_array_limit;
     unsigned short int converted_array[CONVERTED_ARRAY_LIMIT];
+\
 };
