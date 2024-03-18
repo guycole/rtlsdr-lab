@@ -1,8 +1,24 @@
+#ifndef __DECODER_H 
+#define __DECODER_H
+
+class Decoder {
+public:
+    Decoder(void);
+    ~Decoder(void);
+
+    void converter(std::string raw_buffer);
+
+};
+
+#endif
+
+#if 0
+
 #define CONVERTED_ARRAY_LIMIT 14
 
-using namespace std;
+//using namespace std;
 
-class mode_s_decoder {
+class Decoder {
 public:
     void converter(std::string raw_buffer);
     void adsb_parser(std::string raw_buffer);
@@ -28,5 +44,5 @@ private:
     // converted array is for converted message
     //int converted_array_limit;
     unsigned short int converted_array[CONVERTED_ARRAY_LIMIT];
-    
 };
+#endif
