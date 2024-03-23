@@ -7,6 +7,18 @@ typedef struct {
     unsigned short df;
     unsigned short capability;
     unsigned int icao;
+    unsigned short type_code;
+
+    // tc4
+    unsigned short aircraft_category;
+    char aircraft_category2[4];
+
+    // tc19
+    unsigned short sub_type_code;
+    unsigned short intent_change_flag;
+    unsigned short ifr_capability_flag;
+    unsigned short uncertainty_flag;
+
 } ADSB, *ADSB_PTR;
 
 class Decoder {
@@ -28,7 +40,8 @@ private:
     void adsb();
     void dispatcher();
     int converter(std::string raw_buffer);
-
+    void wake_vortex();
+    
     int converted_array_size;
     unsigned short int converted_array[CONVERTED_ARRAY_LIMIT];
 

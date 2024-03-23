@@ -4,7 +4,7 @@
 
 #include "decoder.h"
 
-//g++ -o sd -g -Wall *.cxx
+//g++ -o xx -g -Wall *.cxx
 
 int main(int argc, char* argv[]) {
     const std::string banner = "decoder 0.0"; //TODO get version from cmake
