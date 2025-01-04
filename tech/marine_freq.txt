@@ -1,0 +1,6 @@
+https://www.navcen.uscg.gov/us-vhf-channel-information
+
+https://www.raspberrypi-spy.co.uk/2019/06/using-a-usb-audio-device-with-the-raspberry-pi/
+
+amixer set Master 30%
+
