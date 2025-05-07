@@ -44,3 +44,5 @@ lab01/build/*
 
 .DS_Store
 .vscode
+
+*~
