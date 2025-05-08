@@ -1,5 +1,5 @@
 #
-# Title: sine_gen.py
+# Title: sine_gen01.py
 # Description: generate monotone audio signal for aplay(1)
 #
 # Creates files for gnuplot(1) and aplay(1).
