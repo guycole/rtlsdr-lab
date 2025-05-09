@@ -2,14 +2,14 @@
     "antenna": "unknown",
     "application": "unknown",
     "duration": 0,
-    "epoch_time": 1746767662,
+    "epoch_time": 1746809763,
     "host": "unknown",
-    "key": "e1f7e33c-6842-42ea-9344-6e469ae5a3b9",
+    "json_version": 1,
+    "key": "2eb42b19-305a-4012-a743-abe270dee324",
     "note": "none",
     "receiver": "unknown",
     "sample_frequency": 0,
-    "schema_version": 1,
     "signal_frequency": 0,
     "site": "unknown",
-    "time_stamp": "2025-05-09T05:14:22.867504+00:00"
+    "time_stamp": "2025-05-09T16:56:03.195514+00:00"
 }
