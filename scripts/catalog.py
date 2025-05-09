@@ -15,7 +15,6 @@ class Catalog:
         catalog = {
             "antenna": "unknown",
             "application": "unknown",
-            "time_stamp": datetime.now(timezone.utc).isoformat(),
             "duration": 0,
             "epoch_time": int(time.time()),
             "host": "unknown",
@@ -23,8 +22,10 @@ class Catalog:
             "note": "none",
             "receiver": "unknown",
             "sample_frequency": 0,
+            "schema_version": 1,
             "signal_frequency": 0,
             "site": "unknown",
+            "time_stamp": datetime.now(timezone.utc).isoformat(),
         }
 
         file_name = f"{catalog['key']}.json"
