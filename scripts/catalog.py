@@ -4,43 +4,31 @@
 # 
 #
 import json
-import sys
 import time
+import uuid
 
 from datetime import datetime, timezone
 
 class Catalog:
 
-    def __init__(self, args: dict[str, str]):
-        self.duration = args["duration"]
-        self.frequency = args["frequency"]
-        self.host = args["host"]
-        self.rate = args["rate"]
-        self.script = args["script"]
-        self.uuid = args["uuid"]
-
-        if self.script.startswith("./"):
-            self.script = self.script[2:]
-
-    def execute(self) -> None:
-
+    def execute(self, file_name: str) -> None:
         catalog = {
             "antenna": "unknown",
-            "application": self.script,
-            "duration": int(self.duration),
+            "application": "unknown",
+            "duration": 0,
             "epoch_time": int(time.time()),
-            "host": self.host,
+            "host": "unknown",
             "json_version": 1,
-            "key": self.uuid,
+            "key": str(uuid.uuid4()),
             "note": "none",
             "receiver": "unknown",
-            "sample_frequency": int(self.rate),
-            "signal_frequency": int(self.frequency),
+            "sample_frequency": 0,
+            "signal_frequency": 0,
             "site": "unknown",
             "time_stamp": datetime.now(timezone.utc).isoformat(),
         }
 
-        file_name = f"{self.uuid}.json"
+        file_name = f"{catalog['key']}.json"
         print(f"creating {file_name}")
 
         try:
@@ -50,21 +38,10 @@ class Catalog:
             print(error)
 
 if __name__ == '__main__':
-    if len(sys.argv) > 1:
-        args = {
-            "uuid": sys.argv[1],
-            "duration": sys.argv[2],
-            "frequency": sys.argv[3],
-            "rate": sys.argv[4],
-            "script": sys.argv[5],
-            "host": sys.argv[6]
-        }
+    print("main")
 
-    else:
-        args = {}
-
-    catalog = Catalog(args)
-    catalog.execute()
+    catalog = Catalog()
+    catalog.execute("json_reader.json")
 
 #;;; Local Variables: ***
 #;;; mode:python ***

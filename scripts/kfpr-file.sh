@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Title: kfpr_file.sh
-# Description: 
+# Description: create IQ file for kfpr
 # Development Environment: Ubuntu 22.04.05 LTS
 # Author: Guy Cole (guycole at gmail dot com)
 #

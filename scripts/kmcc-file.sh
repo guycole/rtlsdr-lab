@@ -1,7 +1,7 @@
 #!/bin/bash
 #
-# Title: kqed-file.sh
-# Description: KQED IQ file
+# Title: kmcc-file.sh
+# Description: IQ file from McClellan ATIS
 # Development Environment: Ubuntu 22.04.05 LTS
 # Author: Guy Cole (guycole at gmail dot com)
 #
@@ -9,7 +9,7 @@ PATH=/bin:/usr/bin:/etc:/usr/local/bin; export PATH
 #
 BLOCK_SIZE=$((16 * 16384))
 DURATION=30
-FREQUENCY=88500000
+FREQUENCY=125975000
 HOST_NAME=$(hostname)
 SAMPLE_RATE=2400000
 SAMPLE_QUANTITY=$(($DURATION * $SAMPLE_RATE))
@@ -17,7 +17,7 @@ SCRIPT_NAME=$0
 TODAY=$(date '+%Y-%m-%d')
 UUID=$(uuidgen)
 #
-FILE_NAME="kqed-${TODAY}.iq"
+FILE_NAME="kmcc-${TODAY}.iq"
 FILE_NAME="${UUID}.iq"
 #
 source venv/bin/activate

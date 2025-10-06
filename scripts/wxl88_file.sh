@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Title: wxl88_file.sh
-# Description: 
+# Description: NOAA WX radio IQ file
 # Development Environment: Ubuntu 22.04.05 LTS
 # Author: Guy Cole (guycole at gmail dot com)
 #

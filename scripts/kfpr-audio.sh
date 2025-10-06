@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # Title: kfpr-audio.sh
-# Description: 
+# Description: play KFPR audio
 # Development Environment: Ubuntu 22.04.05 LTS
 # Author: Guy Cole (guycole at gmail dot com)
 #
