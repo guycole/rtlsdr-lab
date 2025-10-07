@@ -14,18 +14,20 @@ class Catalog:
     def execute(self, file_name: str) -> None:
         catalog = {
             "antenna": "unknown",
-            "application": "unknown",
-            "duration": 0,
-            "epoch_time": int(time.time()),
+            "callsign": "noCallsign",
+            "centerFreqHz": 0,
+            "collectionScript": "unknown",
+            "durationSeconds": 0,
             "host": "unknown",
-            "json_version": 1,
             "key": str(uuid.uuid4()),
-            "note": "none",
+            "name": "noName",
+            "note": "noNote",
             "receiver": "unknown",
-            "sample_frequency": 0,
-            "signal_frequency": 0,
+            "sampleRateHz": 0,
+            "schemaVersion": 1,
             "site": "unknown",
-            "time_stamp": datetime.now(timezone.utc).isoformat(),
+            "timeStampEpoch": int(time.time()),
+            "timeStampIso8601": datetime.now(timezone.utc).isoformat()
         }
 
         file_name = f"{catalog['key']}.json"
