@@ -1,0 +1,6 @@
+https://k3xec.com/packrat-processing-iq/#:~:text=RTL%2DSDR,(quadrature%20or%20Q)%20value.
+
+https://pysdr.org/content/sampling.html
+
+https://www.analog.com/en/resources/technical-books/software-defined-radio-for-engineers.html
+
