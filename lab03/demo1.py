@@ -63,19 +63,8 @@ class SignalDemo1:
 
         return results
 
-    def grafer(self, samples):
-        plt.figure(figsize=(10, 4))
-        plt.plot(samples.real, label='In-Phase (I)', alpha=0.7)
-        plt.plot(samples.imag, label='Quadrature (Q)', alpha=0.7)
-        plt.title('IQ Samples')
-        plt.xlabel('Sample Index')
-        plt.ylabel('Amplitude')
-        plt.legend()
-        plt.grid()
-        plt.show()
-
-    def grafer2(self,  samples: np.ndarray, center_freq_hz: int, duration_seconds: int, sample_rate_hz: int):
-        print("grafer2")
+    def psd_grafer(self,  samples: np.ndarray, center_freq_hz: int, duration_seconds: int, sample_rate_hz: int):
+        print("psd_grafer")
 
         iq = samples[0:sample_rate_hz]
 
@@ -93,8 +82,6 @@ class SignalDemo1:
         f += center_freq_hz 
         plt.plot(f, PSD_shifted)
         plt.show()  
-
-        print("plot done")
 
     def x1(self, samples: np.ndarray, duration_seconds: int, sample_rate_hz: int):
         print("x1")
@@ -117,7 +104,7 @@ class SignalDemo1:
         description = self.json_reader(catalog_file_name)
         print(description)
 
-        self.grafer2(iq_samples, description.get("centerFreqHz", 0), description.get("durationSeconds", 0), description.get("sampleRateHz", 0))
+        self.psd_grafer(iq_samples, description.get("centerFreqHz", 0), description.get("durationSeconds", 0), description.get("sampleRateHz", 0))
 
 print("start demo1")
 
